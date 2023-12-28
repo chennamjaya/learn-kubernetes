@@ -6,6 +6,8 @@ spec:
   containers:
     - name: frontend
       image: 851512651356.dkr.ecr.us-east-1.amazonaws.com/frontend:1.0.3
+    imagePullSecrets:
+    - name: aws-ecr
 
 
 #---
