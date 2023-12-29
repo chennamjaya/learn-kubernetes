@@ -34,11 +34,11 @@ metadata:
     app: backend
 spec:
   containers:
-   - name: backend
-     image: 851512651356.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.1
-     env:
-       - name: DB_HOST
-         value: mysql
+    - name: backend
+      image: 851512651356.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.1
+      env:
+        - name: DB_HOST
+          value: mysql
   imagePullSecrets:
     - name: aws-ecr
 
