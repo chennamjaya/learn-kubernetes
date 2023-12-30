@@ -71,6 +71,12 @@ spec:
       targetPort: 8080
 
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: schema 
+
+---
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -78,6 +84,7 @@ metadata:
 spec:
   template:
     spec:
+      serviceAccountName: schema
       imagePullSecrets:
         - name: aws-ecr
       restartPolicy: Never
