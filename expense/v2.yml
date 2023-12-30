@@ -1,3 +1,10 @@
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: frontend
+
+---
 apiVersion: v1
 kind: Pod
 metadata:
@@ -5,6 +12,7 @@ metadata:
   labels:
     app: frontend
 spec:
+  serviceAccountName: frontend
   containers:
     - name: frontend
       image: 851512651356.dkr.ecr.us-east-1.amazonaws.com/frontend:2.0.1
@@ -27,12 +35,19 @@ spec:
 
 ---
 apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: backend 
+
+---
+apiVersion: v1
 kind: Pod
 metadata:
   name: backend
   labels:
     app: backend
 spec:
+  serviceAccountName: backend
   containers:
     - name: backend
       image: 851512651356.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.1
