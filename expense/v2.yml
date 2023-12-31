@@ -112,7 +112,7 @@ spec:
         env:
         - name: COMPONENT
           value: backend
-         volumeMounts:
+        volumeMounts:
         - mountPath: /config
           name: config
       volumes:
