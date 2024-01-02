@@ -39,7 +39,6 @@ metadata:
   name: backend 
   annotations:
     eks.amazonaws.com/role-arn: arn:aws:iam::851512651356:role/prod-expense-backend-eks-sa
-
 ---
 apiVersion: v1
 kind: Pod
@@ -88,8 +87,7 @@ kind: ServiceAccount
 metadata:
   name: schema 
   annotations: 
-    eks.amazonaws.com/role-arn: arn:aws:iam:851512651356:role/prod-expense-schema-eks-sa
-
+    eks.amazonaws.com/role-arn: arn:aws:iam::851512651356:role/prod-expense-schema-eks-sa
 ---
 apiVersion: batch/v1
 kind: Job
